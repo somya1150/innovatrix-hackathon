@@ -1,3 +1,4 @@
+
 """
 URL configuration for mywebsite project.
 
@@ -21,4 +22,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myweb.urls')),
 ]
-
