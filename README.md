@@ -1,7 +1,11 @@
 CAMPUS ECONOMY:SMART ACADEMIC MANAGEMENT
+
+
 A Django-based web application to streamline student registration and campus resources.
 
+
 FEATURES
+
 User Authentication: Secure Login and Registration system.
 Student Profiles: Support for College ID, Semester, and department tracking.
 Dynamic UI: Interactive blue-sliding transitions for the login/signup toggle.
