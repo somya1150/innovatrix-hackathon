@@ -43,6 +43,7 @@ cd mywebsite
 TEAM 
 
 somya1150: backend Development and deployment
-iu_shi: frontend design and UI/UX
+
+IU-shi: frontend design and UI/UX
 
 
