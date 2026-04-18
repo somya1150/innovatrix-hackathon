@@ -32,5 +32,14 @@ def index(request):
 def login_page(request):
     return render(request, 'todo/login.html')
 
-def login_page(request):
-    return render(request,'todo/login.html')
+def shop(request):
+    return render(request, 'todo/shop.html')
+
+def sell(request):
+    return render(request, 'todo/sell.html')
+
+def impact(request):
+    return render(request, 'todo/impact.html')
+
+def cart(request):
+    return render(request, 'todo/cart.html')
