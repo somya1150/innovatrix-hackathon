@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    padding: 40px 0px;
+}
+
+body {
+    width: 100%;
+    background: linear-gradient(90deg, #ffffff, #c9d6ff);
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 80px;
+    background: linear-gradient(90deg, #ffffff, #c9d6ff);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+
+
+#navbar li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0px 20px;
+}
+#navbar li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover {
+    color: #7494ec;
+}
+
+
+.btn {
+     background: transparent;
+     color: black;
+     border: 1px solid black;
+     padding: 8px 20px;
+     border-radius: 20px;
+     cursor: pointer;
+     transition: 0.3s ease;
+     font-weight: 600;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 8px 20px ;
+}
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table td {
+    padding: 15px;
+    text-align: center;
+}
+
+#cart-add {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#subtotal {
+    width: 50%;
+    border: 1px solid #ddd;
+    padding: 30px;
+    background: #fff;
+}
