@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESOURCE LOOP</title>
+    <link rel="stylesheet" href="{% static 'todo/sell.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="{% static 'todoimages/logo.png'%}" class="logo" alt="resource loop logo" width="120px"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Store</a></li>
+                <li><a href="sell.html">Donate/Sell</a></li>
+                <li><a href="impact.html">Imapact</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li><a href="login.html"><button class="btn">Login</button></a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="upload-section">
+    <h1>List Your Resource</h1>
+    <p>Give your items a second life on campus.</p>
+
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <div class="input-box">
+            <input type="text" name="item_name" placeholder="Item Name (e.g., Physics Textbook)" required>
+            <i class='bx bxs-package'></i>
+        </div>
+
+        <div class="input-box">
+            <select name="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="books">Books & Notes</option>
+                <option value="electronics">Electronics (Calc, Drafters)</option>
+                <option value="lab-gear">Lab Gear (Coats, Kits)</option>
+                <option value="stationery">Stationery</option>
+                <option value="other">Other</option>
+            </select>
+            <i class='bx bxs-category'></i>
+        </div>
+        <div class="input-box">
+            <select name="essential for" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="1">semester 1 students</option>
+                <option value="2">semester 2 students</option>
+                <option value="3">semester 3 students</option>
+                <option value="4">semester 4 students</option>
+                <option value="5">semester 5 students</option>
+                <option value="6">semester 6 students</option>
+                <option value="7">semester 7 students</option>
+                <option value="8">semester 8 students</option>
+                <option value="hostel">Hostel essential</option>
+                <option value="misc">miscelinious</option>
+                <option value="other">Other</option>
+            </select>
+            <i class='bx bxs-category'></i>
+        </div>
+
+        <div class="input-box">
+            <select name="condition" required>
+                <option value="" disabled selected>Condition</option>
+                <option value="new">Brand New</option>
+                <option value="good">Gently Used</option>
+                <option value="fair">Well Used</option>
+            </select>
+            <i class='bx bxs-info-circle'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="number" name="price" placeholder="Price (Enter 0 for Free/Donate)">
+            <i class='bx bxs-wallet'></i>
+        </div>
+
+        <div class="input-box">
+            <label for="item-image" style="display:block; margin-bottom: 5px; font-size: 0.8rem;">Upload Product Photo:</label>
+            <input type="file" id="item-image" name="item_image" accept="image/*" required>
+        </div>
+
+        <div class="input-box">
+            <textarea name="description" placeholder="Description (Year, Edition, or Pickup Location)" rows="4" style="width: 100%; border-radius: 5px; padding: 10px;"></textarea>
+        </div>
+
+        <button type="submit" class="btn">Post Item to Loop</button>
+    </form>
+</section>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESOURCE LOOP</title>
+    <link rel="stylesheet" href="{% static 'todo/impact.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="{% static 'todoimages/logo.png'%}" class="logo" alt="resource loop logo" width="120px"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Store</a></li>
+                <li><a href="sell.html">Donate/Sell</a></li>
+                <li><a href="impact.html">Imapact</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li><a href="login.html"><button class="btn">Login</button></a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="container section-p1">
+    <section class="impact-header">
+        <h1>Our Campus Footprint</h1>
+        <p>Real-time statistics of how Resource Loop is changing our college.</p>
+    </section>
+
+    <section class="stat-container">
+        <div class="stat-card">
+            <i class="fa-solid fa-leaf"></i>
+            <h2 id="waste-saved">45 kg</h2>
+            <p>Waste Diverted</p>
+        </div>
+        <div class="stat-card">
+            <i class="fa-solid fa-users"></i>
+            <h2 id="students-helped">120+</h2>
+            <p>Students Impacted</p>
+        </div>
+        <div class="stat-card">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h2 id="money-saved">₹8,500</h2>
+            <p>Money Saved</p>
+        </div>
+    </section>
+
+    <section class="goal-section">
+        <h3>Semester Sustainability Goal</h3>
+        <div class="progress-wrapper">
+            <div class="progress-bar" style="width: 75%;">75%</div>
+        </div>
+        <p>We are almost at our goal of 100kg waste reduction!</p>
+    </section>
+</div>
+</body>
+</html>
