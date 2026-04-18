@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,4 +94,114 @@
 </section>
 
 </body>
+=======
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESOURCE LOOP</title>
+    <link rel="stylesheet" href="{% static 'todo/style.css'%}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="{% static 'todo/images/logo.png' %}" class="logo" alt="resource loop logo" width="120px"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Store</a></li>
+                <li><a href="sell.html">Donate/Sell</a></li>
+                <li><a href="impact.html">Imapact</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li><a href="{% url 'myweb:login'%}"><button class="btn">Login</button></a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="hero-container">
+        <div class="hero-text">
+        <h4>Welcome to Resource Loop</h4>
+        <h2>Buy and Sell Resources Effortlessly</h2>
+        <p>Resource Loop is the ultimate platform for buying and selling resources with ease and efficiency.It connects campus students who are looking for quality resources with the campus students who want to sell them.</p>
+        <br>
+        <a href="shop.html"><button class="btn">Shop Now</button></a>
+       </div>
+        <div class="hero-img">
+        <img src="{% static 'todo/images/HERO.png'%}" alt="Hero Image" >
+        </div>
+    </section>
+    <section id="feature" class="section-p1">
+        <div class="f-box">
+           <img src="{% static 'todo/images/uf.jpg'%}" width="150px">
+           <h4>User-friendly Interface</h4>
+        </div>
+        <div class="f-box">
+            <img src="{% static 'todo/images/vu.jpg'%}" width="150px">
+            <h4>verified student login</h4>
+        </div>
+        <div class="f-box">
+            <img src="{% static 'todo/images/sl.jpg'%}" width="150px">
+            <h4>smart listing system</h4>
+        </div>
+        <div class="f-box">
+            <img src="{% static 'todo/images/cn.jpg' %}" width="150px">
+            <h4>Built-in chat for negotiation</h4>
+        </div>
+        <div class="f-box">
+            <img src="{% static 'todo/images/id.jpg'%}" width="150px">
+            <h4>sustainibility impact dashboard</h4>
+        </div>
+        <div class="f-box">
+            <img src="{% static 'todo/images/cf.jpg'%}" width="150px">
+            <h4>Campus focused system</h4>
+        </div>
+    </section>
+    <section id="product" class="section-p1">
+        <h2>Featured Product</h2>
+        <p>Most searched and requested products</p>
+        <div class="p-container">
+            <div class="p">
+                <img src="{% static 'todo/images/labcoat.jpg'%}" alt="labcoat">
+                <div class="design">
+                    <span>senior</span>
+                    <h5>labcoat/apron for Chemistry lab</h5>
+                    <h4>Rs. 200</h4>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+            <div class="p">
+                <img src="{% static 'todo/images/clc.jpg'%}" alt="calculator">
+                <div class="design">
+                    <span>senior</span>
+                    <h5>Scietific-Calculator</h5>
+                    <h4>Rs. 300</h4>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+            <div class="p">
+                <img src="{%static 'todo/images/phb.jpg'%}" alt="notes">
+                <div class="design">
+                    <span>senior</span>
+                    <h5>First year physics notes</h5>
+                    <h4>Rs. 200</h4>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+            <div class="p">
+                <img src="{% static 'todo/images/ed.jpg' %}" alt="edkit">
+                <div class="design">
+                    <span>senior</span>
+                    <h5>ED kit for graphic designing</h5>
+                    <h4>Rs. 200</h4>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+<script src="script.js"></script>
+>>>>>>> df91bc5 (added registration logic and student data fields)
 </html>
