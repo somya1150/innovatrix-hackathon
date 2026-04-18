@@ -1,6 +1,9 @@
 CAMPUS ECONOMY:SMART ACADEMIC MANAGEMENT
 
 
+ DEPLOYED LINK: https://innovatrix-hackathon.onrender.com/
+
+
 A Django-based web application to streamline student registration and campus resources.
 
 
@@ -16,11 +19,13 @@ Responsive Design: Optimized for both desktop views
 
 TECH STACK
 
-Backend: Python, Django
+Backend: Python, Django, WHhitenoise for static files
 
-Frontend: HTML5, CSS3, JavaScript (ES6+)
+Frontend: HTML5, CSS3, JavaScript
 
 Version Control: Git & GitHub
+
+Deployment: Render
 
 INSTALLATION AND SETUP
 
@@ -34,3 +39,10 @@ cd mywebsite
 (bash)python manage.py migrate
 
 (bash)python manage.py runserver
+
+TEAM 
+
+somya1150: backend Development and deployment
+iu_shi: frontend design and UI/UX
+
+
