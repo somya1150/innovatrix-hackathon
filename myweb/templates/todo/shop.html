@@ -10,15 +10,15 @@
 </head>
 <body>
     <section id="header">
-        <a href="#"><img src="{% static 'todoimages/logo.png'%}" class="logo" alt="resource loop logo" width="120px"></a>
+        <a href="#"><img src="{% static 'todo/images/logo.png'%}" class="logo" alt="resource loop logo" width="120px"></a>
         <div>
             <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Store</a></li>
-                <li><a href="sell.html">Donate/Sell</a></li>
-                <li><a href="impact.html">Imapact</a></li>
-                <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <li><a href="login.html"><button class="btn">Login</button></a></li>
+                <li><a class="active" href="{% url 'myweb:index' %}">Home</a></li>
+                <li><a href="{% url 'myweb:shop' %}">Store</a></li>
+                <li><a href="{% url 'myweb:sell' %}">Donate/Sell</a></li>
+                <li><a href="{% url 'myweb:impact' %}">Imapact</a></li>
+                <li><a href="{% url 'myweb:cart' %}"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li><a href="{% url 'myweb:login' %}"><button class="btn">Login</button></a></li>
             </ul>
         </div>
     </section>
@@ -51,7 +51,7 @@
         <p>Most searched and requested products</p>
         <div class="p-container">
             <div class="p">
-                <img src="images/labcoat.jpg" alt="labcoat">
+                <img src="{% static 'todo/images/labcoat.jpg'%}" alt="labcoat">
                 <div class="design">
                     <span>senior</span>
                     <h5>labcoat/apron for Chemistry lab</h5>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="p">
-                <img src="images/clc.jpg" alt="calculator">
+                <img src="{% static 'todo/images/clc.jpg'%}" alt="calculator">
                 <div class="design">
                     <span>senior</span>
                     <h5>Scietific-Calculator</h5>
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="p">
-                <img src="images/phb.jpg" alt="notes">
+                <img src="{% static 'todo/images/phb.jpg'%}" alt="notes">
                 <div class="design">
                     <span>senior</span>
                     <h5>First year physics notes</h5>
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="p">
-                <img src="images/ed.jpg" alt="edkit">
+                <img src="{% static 'todo/images/ed.jpg'%}" alt="edkit">
                 <div class="design">
                     <span>senior</span>
                     <h5>ED kit for graphic designing</h5>
@@ -90,4 +90,3 @@
     </section>
     
 </body>
-</html>

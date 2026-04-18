@@ -10,15 +10,15 @@
 </head>
 <body>
     <section id="header">
-        <a href="#"><img src="{% static 'todoimages/logo.png'%}" class="logo" alt="resource loop logo" width="120px"></a>
+        <a href="#"><img src="{% static 'todo/images/logo.png'%}" class="logo" alt="resource loop logo" width="120px"></a>
         <div>
             <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Store</a></li>
-                <li><a href="sell.html">Donate/Sell</a></li>
-                <li><a href="impact.html">Imapact</a></li>
-                <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <li><a href="login.html"><button class="btn">Login</button></a></li>
+                <li><a class="active" href="{% url 'myweb:index'%}">Home</a></li>
+                <li><a href="{% url 'myweb:shop'%}">Store</a></li>
+                <li><a href="{% url 'myweb:sell'%}">Donate/Sell</a></li>
+                <li><a href="{% url 'myweb:impact'%}">Imapact</a></li>
+                <li><a href="{% url 'myweb:cart'%}"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li><a href="{% url 'myweb:login'%}"><button class="btn">Login</button></a></li>
             </ul>
         </div>
     </section>
@@ -37,7 +37,7 @@
         <tbody>
             <tr>
                 <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                <td><img src="{% static 'todo/https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100'%" alt=""></td>
+                <td><img src="{% static 'todo/https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100'%}" alt=""></td>
                 <td>Engineering Physics - Vol 1</td>
                 <td>₹250</td>
                 <td><input type="number" value="1"></td>
@@ -64,4 +64,3 @@
     </div>
 </section>
 </body>
-</html>
