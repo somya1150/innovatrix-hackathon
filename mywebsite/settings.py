@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-wcg3(vbnx&p_)bo_^%em$!db_gnnt$vj8%34s@h535w22+ce7n
 DEBUG = True
 
 ALLOWED_HOSTS =  ['innovatrix-hackathon.onrender.com','127.0.0.1','localhost']    
+CSRF_TRUSTED_ORIGIN = ['https://innovatrix-hackathon.onrender.com/']
 
 
 # Application definition
