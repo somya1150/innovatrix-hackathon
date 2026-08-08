@@ -4,32 +4,26 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
+from myweb.models import login
 
-def register_user(request):
-    if request.method == 'POST':
-        # Grabbing data using the 'name' attributes you just added to HTML
-        u_name = request.POST.get('username')
-        u_email = request.POST.get('email')
-        u_pass = request.POST.get('password')
-        college_id = request.POST.get('college_id') # New field!
-        
-        # 1. Create the basic User
-        if User.objects.filter(username=u_name).exists():
-            messages.error(request, "Username already taken")
-            return render(request, 'todo/login.html')
-            
-        user = User.objects.create_user(username=u_name, email=u_email, password=u_pass)
-        user.save()
-        
-        # 2. Redirect to login after successful registration
-        messages.success(request, "Account created! Please login.")
-        return redirect('myweb:login')
-
-    return render(request, 'todo/login.html')
 
 def index(request):
     return render(request,'todo/index.html')
+
 def login_page(request):
+    if request.method == "POST":
+        username= request.POST.get('username')
+        email= request.POST.get('email')
+        college_id= request.POST.get('college_id')
+        sem= request.POST.get('sem')
+        phone= request.POST.get('phone')
+        password= request.POST.get('password')
+        user_record = login(username=username, email=email, college_id=college_id,sem=sem,phone=phone,password=password)
+        user_record.save()
+        messages.success(request, "User registered successfully!")
+
+
+
     return render(request, 'todo/login.html')
 
 def shop(request):
@@ -43,3 +37,5 @@ def impact(request):
 
 def cart(request):
     return render(request, 'todo/cart.html')
+
+
