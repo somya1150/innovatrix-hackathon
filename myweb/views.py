@@ -13,16 +13,24 @@ def index(request):
 
 def login_page(request):
     if request.method == "POST":
-        username= request.POST.get('username')
-        email= request.POST.get('email')
-        college_id= request.POST.get('college_id')
-        sem= request.POST.get('sem')
-        phone= request.POST.get('phone')
-        password= request.POST.get('password')
-        user_record = login(username=username, email=email, college_id=college_id,sem=sem,phone=phone,password=password)
-        user_record.save()
-        messages.success(request, "User registered successfully!")
+        is_register= request.resolver_match.url_name== 'register'
+        if is_register:
 
+            username= request.POST.get('username')
+            email= request.POST.get('email')
+            college_id= request.POST.get('college_id')
+            sem= request.POST.get('sem')
+            phone= request.POST.get('phone')
+            password= request.POST.get('password')
+            user_record = login(username=username, email=email, college_id=college_id,sem=sem,phone=phone,password=password)
+            user_record.save()
+            messages.success(request, "User registered successfully!")
+            return redirect('myweb:login')
+        else:
+            username= request.POST.get('username')
+            password= request.POST.get('password')
+            messages.error(request,"invalid username or password")
+            return redirect('myweb:login')
 
 
     return render(request, 'todo/login.html')
