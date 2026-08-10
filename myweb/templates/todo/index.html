@@ -11,7 +11,7 @@
 </head>
 <body>
     <section id="header">
-        <a href="#"><img src="{% static 'todo/images/logo.png' %}" class="logo" alt="resource loop logo" width="120px"></a>
+        <a href="#"><img src="{% static 'todo/images/logo.png'%}" class="logo" alt="resource loop logo" width="120px"></a>
         <div>
             <ul id="navbar">
                 <li><a class="active" href="{% url 'myweb:index'%}">Home</a></li>
@@ -31,13 +31,13 @@
         <br>
         <a href="shop.html"><button class="btn">Shop Now</button></a>
        </div>
-        <div class="hero-img">
+        <div class="{% static 'todo/hero-img'%}">
         <img src="{% static 'todo/images/HERO.png'%}" alt="Hero Image" >
         </div>
     </section>
     <section id="feature" class="section-p1">
         <div class="f-box">
-           <img src="{% static 'todo/images/uf.jpg'%}" width="150px">
+           <img src="{% static 'todo/images/uf.jpg' %}" width="150px">
            <h4>User-friendly Interface</h4>
         </div>
         <div class="f-box">
@@ -49,7 +49,7 @@
             <h4>smart listing system</h4>
         </div>
         <div class="f-box">
-            <img src="{% static 'todo/images/cn.jpg' %}" width="150px">
+            <img src="{% static 'todo/images/cn.jpg'%}" width="150px">
             <h4>Built-in chat for negotiation</h4>
         </div>
         <div class="f-box">
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="p">
-                <img src="{%static 'todo/images/phb.jpg'%}" alt="notes">
+                <img src="{% static 'todo/images/phb.jpg'%}" alt="notes">
                 <div class="design">
                     <span>senior</span>
                     <h5>First year physics notes</h5>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="p">
-                <img src="{% static 'todo/images/ed.jpg' %}" alt="edkit">
+                <img src="{% static 'todo/images/ed.jpg'%}" alt="edkit">
                 <div class="design">
                     <span>senior</span>
                     <h5>ED kit for graphic designing</h5>
@@ -146,7 +146,6 @@
   	 	</div>
   	 </div>
   </footer>
-    
 </body>
-<script src="{% static 'todo/script.js' %}"></script>
+<script src="{% static 'todo/script.js'%}"></script>
 </html>
