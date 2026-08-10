@@ -3,8 +3,9 @@
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib import messages
 from myweb.models import login
+from django.contrib import messages  #for flash messages while registering the user in the login page. It will show a success message when the user is registered successfully.
+
 
 
 def index(request):
