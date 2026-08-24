@@ -2,10 +2,11 @@
 
 # Create your views here.
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User  # to add a user through login page
 from myweb.models import login
 from django.contrib import messages  #for flash messages while registering the user in the login page. It will show a success message when the user is registered successfully.
-
+from django.contrib.auth import logout, authenticate
+from django.contrib.auth.hashers import check_password, make_password  # to check the password entered by the user with the hashed password stored in the database
 
 
 def index(request):
@@ -22,18 +23,42 @@ def login_page(request):
             sem= request.POST.get('sem')
             phone= request.POST.get('phone')
             password= request.POST.get('password')
-            user_record = login(username=username, email=email, college_id=college_id,sem=sem,phone=phone,password=password)
+            user_record = login(username=username, email=email, college_id=college_id,sem=sem,phone=phone,password=make_password(password))
             user_record.save()
             messages.success(request, "User registered successfully!")
             return redirect('myweb:login')
         else:
-            username= request.POST.get('username')
-            password= request.POST.get('password')
-            messages.error(request,"invalid username or password")
-            return redirect('myweb:login')
+            username = request.POST.get('username')
+            password = request.POST.get('password')
 
+            try:
+                # Find the user record in custom login table
+                user_record = login.objects.get(username=username)
+        
+                # Check if the entered password matches the hashed password
+                if check_password(password, user_record.password):
+            
+                    # To make Django sessions work, get or create a dummy matching auth user, 
+                    # or map it directly so session login works:
+                    django_user, created = User.objects.get_or_create(username=username)
+                    login(request, django_user)
+            
+                    messages.success(request, "Logged in successfully!")
+                    return redirect("/")
+                else:
+                    messages.error(request, "Invalid username or password.")
+                    return redirect('myweb:login')
+            
+            except login.DoesNotExist:
+                messages.error(request, "Invalid username or password.")
+                return redirect('myweb:login')
+            
 
     return render(request, 'todo/login.html')
+
+def logoutuser(request):
+    logout(request)
+    return redirect('/login')
 
 def shop(request):
     return render(request, 'todo/shop.html')
