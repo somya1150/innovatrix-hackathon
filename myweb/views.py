@@ -3,9 +3,9 @@
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User  # to add a user through login page
-from myweb.models import login
+from myweb.models import login as LoginModel
 from django.contrib import messages  #for flash messages while registering the user in the login page. It will show a success message when the user is registered successfully.
-from django.contrib.auth import logout, authenticate
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.hashers import check_password, make_password  # to check the password entered by the user with the hashed password stored in the database
 
 
@@ -23,7 +23,7 @@ def login_page(request):
             sem= request.POST.get('sem')
             phone= request.POST.get('phone')
             password= request.POST.get('password')
-            user_record = login(username=username, email=email, college_id=college_id,sem=sem,phone=phone,password=make_password(password))
+            user_record = LoginModel(username=username, email=email, college_id=college_id,sem=sem,phone=phone,password=make_password(password))
             user_record.save()
             messages.success(request, "User registered successfully!")
             return redirect('myweb:login')
@@ -33,7 +33,7 @@ def login_page(request):
 
             try:
                 # Find the user record in custom login table
-                user_record = login.objects.get(username=username)
+                user_record = LoginModel.objects.get(username=username)
         
                 # Check if the entered password matches the hashed password
                 if check_password(password, user_record.password):
@@ -44,21 +44,23 @@ def login_page(request):
                     login(request, django_user)
             
                     messages.success(request, "Logged in successfully!")
-                    return redirect("/")
+                    return redirect("myweb:user")
                 else:
                     messages.error(request, "Invalid username or password.")
                     return redirect('myweb:login')
             
-            except login.DoesNotExist:
+            except LoginModel.DoesNotExist:
                 messages.error(request, "Invalid username or password.")
                 return redirect('myweb:login')
             
 
     return render(request, 'todo/login.html')
 
-def logoutuser(request):
-    logout(request)
-    return redirect('/login')
+def user(request):
+    if request.user.is_authenticated:
+        return render(request, 'todo/user.html')
+    else:
+        return redirect('myweb:login')
 
 def shop(request):
     return render(request, 'todo/shop.html')
