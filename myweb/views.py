@@ -7,6 +7,7 @@ from myweb.models import login as LoginModel
 from django.contrib import messages  #for flash messages while registering the user in the login page. It will show a success message when the user is registered successfully.
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.hashers import check_password, make_password  # to check the password entered by the user with the hashed password stored in the database
+from django.contrib.auth.decorators import login_required  # to restrict access to the user page for only logged in users
 
 
 def index(request):
@@ -64,18 +65,29 @@ def user(request):
 
 def logoutuser(request):
     logout(request)
-    messages.success(request, "Logged out successfully")
+    messages.success(request, "Logged out successfully!")
     return redirect('myweb:index')
 
 def shop(request):
+    if request.method=="POST":
+        if not request.user.is_authenticated:
+            messages.error(request, "Please login first!")
+            return redirect('myweb:login')
     return render(request, 'todo/shop.html')
 
+
 def sell(request):
+    if not request.user.is_authenticated:
+        messages.error(request, "Please login first!")
+        return redirect('myweb:login')
+    if request.method=="POST":
+        pass
     return render(request, 'todo/sell.html')
 
 def impact(request):
     return render(request, 'todo/impact.html')
 
+@login_required
 def cart(request):
     return render(request, 'todo/cart.html')
 
