@@ -18,7 +18,7 @@
                 <li><a href="{% url 'myweb:sell' %}">Donate/Sell</a></li>
                 <li><a href="{% url 'myweb:impact' %}">Imapact</a></li>
                 <li><a href="{% url 'myweb:cart' %}"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <li><a href="{% url 'myweb:login' %}"><button class="btn">Login</button></a></li>
+                <li><a href="{% url 'myweb:logout' %}"><button class="btn">Logout</button></a></li>
             </ul>
         </div>
     </section>
@@ -35,7 +35,7 @@
 
         <div class="input-box">
             <select name="category" required>
-                <option value="" disabled selected>Select Category</option>
+                <option value="" disabled selected>Category of product</option>
                 <option value="books">Books & Notes</option>
                 <option value="electronics">Electronics (Calc, Drafters)</option>
                 <option value="lab-gear">Lab Gear (Coats, Kits)</option>
@@ -46,7 +46,7 @@
         </div>
         <div class="input-box">
             <select name="essential for" required>
-                <option value="" disabled selected>Select Category</option>
+                <option value="" disabled selected>Semester</option>
                 <option value="1">semester 1 students</option>
                 <option value="2">semester 2 students</option>
                 <option value="3">semester 3 students</option>
