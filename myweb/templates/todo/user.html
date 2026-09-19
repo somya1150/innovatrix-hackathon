@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESOURCE LOOP</title>
     <link rel="stylesheet" href="{% static 'todo/style.css'%}">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 </head>
 <body>
     {% if messages %}
@@ -27,7 +27,7 @@
                 <li><a href="{% url 'myweb:sell'%}">Donate/Sell</a></li>
                 <li><a href="{% url 'myweb:impact'%}">Imapact</a></li>
                 <li><a href="{% url 'myweb:cart'%}"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <li><a href="{% url 'myweb:user' %}"><button class="btn">Profile</button></a></li>
+                <li><a href="{% url 'myweb:logout' %}"><button class="btn">Logout</button></a></li>
                            
             </ul>
         </div>

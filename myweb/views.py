@@ -62,6 +62,11 @@ def user(request):
     else:
         return redirect('myweb:login')
 
+def logoutuser(request):
+    logout(request)
+    messages.success(request, "Logged out successfully")
+    return redirect('myweb:index')
+
 def shop(request):
     return render(request, 'todo/shop.html')
 
