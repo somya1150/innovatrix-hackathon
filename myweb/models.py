@@ -14,5 +14,18 @@ class login(models.Model):
     phone =models.CharField(max_length=12)
     password=models.CharField(max_length=122)
 
-def __str__(self):
-    return self.username
+    def __str__(self):
+        return self.username
+
+class product(models.Model):
+    name=models.CharField(max_length=122)
+    category=models.CharField(max_length=122)
+    semester=models.CharField(max_length=122)
+    condition=models.CharField(max_length=122)
+    price=models.FloatField()
+    desc=models.TextField()
+    image=models.ImageField(upload_to='shop/images')
+    posted_by=models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

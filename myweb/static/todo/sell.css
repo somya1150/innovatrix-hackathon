@@ -153,3 +153,25 @@ form {
 .upload-section .btn:hover {
     background: #5a7bd4;
 }
+.alert {
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn-close::before {
+    content: "×";
+}

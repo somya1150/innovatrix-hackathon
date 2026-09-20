@@ -8,7 +8,7 @@ from django.contrib import messages  #for flash messages while registering the u
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.hashers import check_password, make_password  # to check the password entered by the user with the hashed password stored in the database
 from django.contrib.auth.decorators import login_required  # to restrict access to the user page for only logged in users
-
+from .form import productForm
 
 def index(request):
     return render(request,'todo/index.html')
@@ -81,7 +81,13 @@ def sell(request):
         messages.error(request, "Please login first!")
         return redirect('myweb:login')
     if request.method=="POST":
-        pass
+        form= productForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_product = form.save(commit=False)
+            new_product.posted_by=request.user
+            new_product.save()
+            messages.success(request,"Item posted successfully")
+            return redirect('myweb:sell')
     return render(request, 'todo/sell.html')
 
 def impact(request):

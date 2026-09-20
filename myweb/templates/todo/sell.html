@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>{{ message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
     <section id="header">
         <a href="#"><img src="{% static 'todo/images/logo.png'%}" class="logo" alt="resource loop logo" width="120px"></a>
         <div>
@@ -26,10 +34,10 @@
     <h1>List Your Resource</h1>
     <p>Give your items a second life on campus.</p>
 
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form action="/sell/" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="input-box">
-            <input type="text" name="item_name" placeholder="Item Name (e.g., Physics Textbook)" required>
+            <input type="text" name="name" placeholder="Item Name (e.g., Physics Textbook)" required>
             <i class='bx bxs-package'></i>
         </div>
 
@@ -45,7 +53,7 @@
             <i class='bx bxs-category'></i>
         </div>
         <div class="input-box">
-            <select name="essential for" required>
+            <select name="semester" required>
                 <option value="" disabled selected>Semester</option>
                 <option value="1">semester 1 students</option>
                 <option value="2">semester 2 students</option>
@@ -78,16 +86,18 @@
         </div>
 
         <div class="input-box">
-            <label for="item-image" style="display:block; margin-bottom: 5px; font-size: 0.8rem;">Upload Product Photo:</label>
-            <input type="file" id="item-image" name="item_image" accept="image/*" required>
+            <label for="image" style="display:block; margin-bottom: 5px; font-size: 0.8rem;">Upload Product Photo:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
         </div>
 
         <div class="input-box">
-            <textarea name="description" placeholder="Description (Year, Edition, or Pickup Location)" rows="4" style="width: 100%; border-radius: 5px; padding: 10px;"></textarea>
+            <textarea name="desc" placeholder="Description (Year, Edition, or Pickup Location)" rows="4" style="width: 100%; border-radius: 5px; padding: 10px;"></textarea>
         </div>
 
         <button type="submit" class="btn">Post Item to Loop</button>
     </form>
 </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
