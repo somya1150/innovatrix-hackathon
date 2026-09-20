@@ -9,6 +9,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.hashers import check_password, make_password  # to check the password entered by the user with the hashed password stored in the database
 from django.contrib.auth.decorators import login_required  # to restrict access to the user page for only logged in users
 from .form import productForm
+from .models import product
 
 def index(request):
     return render(request,'todo/index.html')
@@ -69,11 +70,9 @@ def logoutuser(request):
     return redirect('myweb:index')
 
 def shop(request):
-    if request.method=="POST":
-        if not request.user.is_authenticated:
-            messages.error(request, "Please login first!")
-            return redirect('myweb:login')
-    return render(request, 'todo/shop.html')
+    products = product.objects.all().order_by('-id')  # Fetch all products from the database and order them by ID in descending order
+    context = {'products': products}
+    return render(request, 'todo/shop.html', context)
 
 
 def sell(request):
