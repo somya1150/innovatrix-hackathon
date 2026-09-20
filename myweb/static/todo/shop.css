@@ -182,3 +182,15 @@ align-items: center;
 justify-content: space-between;
 flex-wrap: wrap;
 }
+.p img {
+    width: 100%;             /* Makes the image fill the card width */
+    height: 220px;           /* Set a fixed height for all product boxes */
+    object-fit: cover;       /* Crops the image nicely to fit the container without distorting */
+    border-radius: 8px;      /* Optional: rounds the corners slightly */
+}
+.p-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Packs items starting from the left */
+    gap: 20px;                   /* Adds clean, even spacing between cards */
+}
