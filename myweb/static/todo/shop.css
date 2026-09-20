@@ -183,10 +183,12 @@ justify-content: space-between;
 flex-wrap: wrap;
 }
 .p img {
-    width: 100%;             /* Makes the image fill the card width */
-    height: 220px;           /* Set a fixed height for all product boxes */
-    object-fit: cover;       /* Crops the image nicely to fit the container without distorting */
-    border-radius: 8px;      /* Optional: rounds the corners slightly */
+    width: 100%;
+    height: 220px;               /* Keeps all boxes the exact same uniform height */
+    object-fit: contain;         /* Shows the WHOLE image without cropping any part of it */
+    background-color: #ffffff;   /* Gives it a clean white background like Amazon */
+    padding: 10px;               /* Adds a little breathing room around the product */
+    box-sizing: border-box;
 }
 .p-container {
     display: flex;
