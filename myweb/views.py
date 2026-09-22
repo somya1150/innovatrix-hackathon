@@ -96,4 +96,7 @@ def impact(request):
 def cart(request):
     return render(request, 'todo/cart.html')
 
+def product_detail(request,product_id):
+    item=product.objects.get(id=product_id)
+    return render(request, 'todo/product_detail.html',{'item':item})
 

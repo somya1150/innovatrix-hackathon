@@ -22,37 +22,10 @@
             </ul>
         </div>
     </section>
-    <section id="search-filter-bar" class="section-p1">
-    <div class="search-box">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="What are you looking for? (e.g. Drafter, Notes)">
-    </div>
-
-    <div class="filter-options">
-        <label for="category-select">Filter by:</label>
-        <select id="category-select" name="category">
-            <option value="all">All Categories</option>
-            <option value="books">Books</option>
-            <option value="lab">Lab Gear</option>
-            <option value="electronics">Electronics</option>
-            <option value="hostel">Hostel Gear</option>
-        </select>
-        
-        <select id="price-select" name="price">
-            <option value="any">Any Price</option>
-            <option value="free">Free / Donation</option>
-            <option value="low">Under ₹500</option>
-            <option value="high">Over ₹500</option>
-        </select>
-    </div>
-</section>
-    <section id="product" class="section-p1">
-        <h2>Explore Products at resource loop</h2>
-        <p>Most searched and requested products</p>
-        <div class="p-container">
+    <div class="p-container">
             {% for item in products %}
                 <div class="p">
-                    <a href="{% url 'myweb:product_detail' product_id=item.id %}">
+                    < a href="{ % url 'myweb:product' id=item.id % }>
                     {% if item.image %}
                         <img src="{{ item.image.url }}" alt="{{ item.name }}">
                     {% endif %}
@@ -63,11 +36,4 @@
                         <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
-            {% empty %}
-                <p>No items available in the store right now. Be the first to list one!</p>
-            {% endfor %}
-        </div>
-    </section>
-    </section>
-    
-</body>
+                {% endfor %}
